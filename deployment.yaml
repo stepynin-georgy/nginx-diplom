@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: test-app
-        image: stepynin/nginx:v1.2.1
+        image: stepynin/nginx:v1.3.1
         ports:
         - containerPort: 80
 
