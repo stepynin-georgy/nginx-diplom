@@ -8,7 +8,7 @@ on:
       - 'v*'
 
 env:
-  IMAGE_TAG: stepynin-georgy/nginx
+  IMAGE_TAG: stepynin/nginx
   RELEASE_NAME: nginx
   NAMESPACE: netology
 
@@ -71,9 +71,9 @@ jobs:
         if: env.DEPLOY == 'false'
        
         run: |
-          sed -i "s|image: stepynin-georgy/nginx:.*|image: ${{ env.IMAGE_TAG }}|" ./deployment.yaml
+          sed -i "s|image: stepynin/nginx:.*|image: ${{ env.IMAGE_TAG }}|" ./deployment.yaml
         env:
-          IMAGE_TAG: stepynin-georgy/nginx:${{ env.VERSION }}
+          IMAGE_TAG: stepynin/nginx:${{ env.VERSION }}
       
       - name: Create kubeconfig
         run: |
