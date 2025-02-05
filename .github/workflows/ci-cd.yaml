@@ -83,9 +83,6 @@ jobs:
           KUBECONFIG: ${{ secrets.KUBECONFIG }}
         run: |
           echo "${KUBECONFIG}" > ${HOME}/.kube/config
-      - name: Delete service
-        run: |
-          kubectl delete service test-app-svc --insecure-skip-tls-verify 
       - name: Apply Kubernetes manifests
         run: |
           kubectl apply -f ./deployment.yaml --validate=false --insecure-skip-tls-verify
